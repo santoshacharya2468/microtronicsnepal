@@ -9,6 +9,7 @@ router.get('/getall',async(req,res)=>{
 
 router.post('/add',authCheck, async(req,res)=>{
     const {name,body,images,video,category}=req.body;
+    console.log(req.body);
  const  result=  await  Product.create({
          name,body, images, video,category,
     });

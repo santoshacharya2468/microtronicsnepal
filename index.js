@@ -32,7 +32,7 @@ const storage = multer.diskStorage({
         'path':req.image
     })
   });
-// app.use(express.json({limit:"300M"}));
+app.use(express.json({limit:"300M"}));
 mongoose.connect(process.env.mongodb,()=>console.log('database connected successfully'));
 
 app.use('/auth',authRoute);
@@ -41,6 +41,10 @@ const Product=require('./models/product');
 app.get('/',async(req,res)=>{
    try{
     const products=await Product.find().lean();
+    products.forEach((e)=>{
+      e.isGov=e.category==0;
+    });
+    console.log(products);
     res.render('index',{products:products});
    }catch(e){
     console.log(e);

@@ -499,17 +499,21 @@
 
         <div class="row awesome-project-content portfolio-container">
            {{#each products}}
+
+           {{#if this.isGov}}
           
           <!-- portfolio-item start -->
-          <div class="col-md-4 col-sm-4 col-xs-12 portfolio-item filter-app portfolio-item">
+          <div class="col-md-4 col-sm-4 col-xs-12 portfolio-item portfolio-item filter-app">
             <div class="single-awesome-project">
               <div class="awesome-img">
-                <a href="#"><img src="{{this.images.[0]}}" alt="" /></a>
+                <a href="#"><img src="http://198.13.52.115/{{this.images.[0]}}"
+                
+                 alt="" /></a>
                 <div class="add-actions text-center">
                   <div class="project-dec">
                     <a class="portfolio-lightbox" data-gallery="myGallery"
                      data-glightbox="title: {{this.name}}; description: {{this.body}}"
-                     href="{{this.images.[0]}}">
+                     href="http://198.13.52.115/{{this.images.[0]}}">
                       <h4>{{this.name}}</h4>
                       <span>{{this.body}}</span>
                     </a>
@@ -518,6 +522,27 @@
               </div>
             </div>
           </div>
+          {{else}}
+          <div class="col-md-4 col-sm-4 col-xs-12 portfolio-item portfolio-item filter-card">
+            <div class="single-awesome-project">
+              <div class="awesome-img">
+                <a href="#"><img src="http://198.13.52.115/{{this.images.[0]}}"
+                
+                 alt="" /></a>
+                <div class="add-actions text-center">
+                  <div class="project-dec">
+                    <a class="portfolio-lightbox" data-gallery="myGallery"
+                     data-glightbox="title: {{this.name}}; description: {{this.body}}"
+                     href="http://198.13.52.115/{{this.images.[0]}}">
+                      <h4>{{this.name}}</h4>
+                      <span>{{this.body}}</span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          {{/if}}
           <!-- portfolio-item end -->
 
          {{/each}}
@@ -1134,8 +1159,8 @@
                 <div class="footer-contacts">
                   <p><span>Tel:</span> +977 9802314980</p>
                   <p><span>Email:</span> microtronicsprem@gmail.com</p>
-                   <p><span>Reg.Number:</span> microtronicsprem@gmail.com</p>
-                   <p><span>Reg.Number:</span> microtronicsprem@gmail.com</p>
+                   <p><span>PAN Number:</span>603503117</p>
+                   <p><span>Reg.Number:</span>136236/071/072</p>
                   <p><span>Working Hours:</span> 24/7</p>
                 </div>
               </div>
