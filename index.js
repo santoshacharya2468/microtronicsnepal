@@ -32,15 +32,24 @@ const storage = multer.diskStorage({
         'path':req.image
     })
   });
-app.use(express.json({limit:"300M"}));
+// app.use(express.json({limit:"300M"}));
 mongoose.connect(process.env.mongodb,()=>console.log('database connected successfully'));
 
 app.use('/auth',authRoute);
 app.use('/product',productRoute);
 const Product=require('./models/product');
 app.get('/',async(req,res)=>{
+   try{
     const products=await Product.find().lean();
-    console.log(products);
     res.render('index',{products:products});
+   }catch(e){
+    console.log(e);
+    res.send(e);
+   }
+});
+app.get('/productbyid/:id',async(req,res)=>{
+   const product=await Product.findById(req.params.id).lean();
+  res.render('product_details',{product:product});
+
 });
 app.listen(process.env.PORT||8080,()=>console.log('Server running on port 8080'));

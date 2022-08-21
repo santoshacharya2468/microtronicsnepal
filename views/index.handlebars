@@ -39,15 +39,32 @@
 
   <!-- ======= Header ======= -->
   <header id="header" class="fixed-top d-flex align-items-center">
-    <div class="container d-flex justify-content-between">
+    <div class="container d-flex justify-content-start">
 
       <div class="logo">
-        <h1><a href="index.html"><span></span>MICROTRONICSNEPAL</a></h1>
+        <h1><a href="/"><img src="assets/img/logo.png" alt="" class="img-fluid">
+          MICROTRONICS NEPAL PVT LTD</a>
+         
+        
+        </h1>
+      
         <!-- Uncomment below if you prefer to use an image logo -->
-        <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+       
+       
       </div>
+      <div style="margin-top: 20px; margin-left:05px;color:white;">
+ <span><p
+  style="color: white"
+ >Smart Living</p></span> 
+      </div>
+      
+      
+
+      </div>
+      
 
       <nav id="navbar" class="navbar">
+         
         <ul>
           <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
           <li><a class="nav-link scrollto" href="#about">About</a></li>
@@ -478,24 +495,23 @@
             </ul>
           </div>
         </div>
-        {{#each products}}
-         <p>{{this.name}}</p>
-         <h1>{{this.body}}</h1>
-
-         {{/each}}
+       
 
         <div class="row awesome-project-content portfolio-container">
-
+           {{#each products}}
+          
           <!-- portfolio-item start -->
           <div class="col-md-4 col-sm-4 col-xs-12 portfolio-item filter-app portfolio-item">
             <div class="single-awesome-project">
               <div class="awesome-img">
-                <a href="#"><img src="assets/img/portfolio/a.jpg" alt="" /></a>
+                <a href="#"><img src="{{this.images.[0]}}" alt="" /></a>
                 <div class="add-actions text-center">
                   <div class="project-dec">
-                    <a class="portfolio-lightbox" data-gallery="myGallery" href="assets/img/portfolio/1.jpg">
-                      <h4>Business City</h4>
-                      <span>Web Development</span>
+                    <a class="portfolio-lightbox" data-gallery="myGallery"
+                     data-glightbox="title: {{this.name}}; description: {{this.body}}"
+                     href="{{this.images.[0]}}">
+                      <h4>{{this.name}}</h4>
+                      <span>{{this.body}}</span>
                     </a>
                   </div>
                 </div>
@@ -504,8 +520,12 @@
           </div>
           <!-- portfolio-item end -->
 
+         {{/each}}
+
+         
+
           <!-- portfolio-item start -->
-          <div class="col-md-4 col-sm-4 col-xs-12 portfolio-item filter-web">
+          {{!-- <div class="col-md-4 col-sm-4 col-xs-12 portfolio-item filter-web">
             <div class="single-awesome-project">
               <div class="awesome-img">
                 <a href="#"><img src="assets/img/portfolio/b.jpg" alt="" /></a>
@@ -519,11 +539,11 @@
                 </div>
               </div>
             </div>
-          </div>
+          </div> --}}
           <!-- portfolio-item end -->
 
           <!-- portfolio-item start -->
-          <div class="col-md-4 col-sm-4 col-xs-12 portfolio-item filter-card">
+          {{!-- <div class="col-md-4 col-sm-4 col-xs-12 portfolio-item filter-card">
             <div class="single-awesome-project">
               <div class="awesome-img">
                 <a href="#"><img src="assets/img/portfolio/c.jpg" alt="" /></a>
@@ -696,7 +716,7 @@
                                 </div>
                               </div>
                             </div>
-                          </div>
+                          </div> --}}
                           <!-- portfolio-item end -->
 
         </div>
@@ -1041,7 +1061,7 @@
             <!-- Start Google Map -->
             <div class="col-md-6">
               <!-- Start Map -->
-              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d22864.11283411948!2d-73.96468908098944!3d40.630720240038435!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew+York%2C+NY%2C+USA!5e0!3m2!1sen!2sbg!4v1540447494452" width="100%" height="380" frameborder="0" style="border:0" allowfullscreen></iframe>
+             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3532.780721977889!2d85.28114339999999!3d27.6931714!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb187a97f390b1%3A0xec3f47092df0d4ca!2sKalanki%2C%20Kathmandu%2044600!5e0!3m2!1sen!2snp!4v1661061851351!5m2!1sen!2snp" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
               <!-- End Map -->
             </div>
             <!-- End Google Map -->
@@ -1108,12 +1128,14 @@
             <div class="footer-content">
               <div class="footer-head">
                 <h4>information</h4>
-                <p>
+                {{!-- <p>
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.
-                </p>
+                </p> --}}
                 <div class="footer-contacts">
                   <p><span>Tel:</span> +977 9802314980</p>
                   <p><span>Email:</span> microtronicsprem@gmail.com</p>
+                   <p><span>Reg.Number:</span> microtronicsprem@gmail.com</p>
+                   <p><span>Reg.Number:</span> microtronicsprem@gmail.com</p>
                   <p><span>Working Hours:</span> 24/7</p>
                 </div>
               </div>

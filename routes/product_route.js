@@ -2,6 +2,7 @@ const Product=require('../models/product');
 const router=require('express').Router();
 const authCheck=require('../middleware/auth');
 router.get('/getall',async(req,res)=>{
+    console.log('product getall');
     const products=await Product.find();
     res.json({'products':products});
 });
